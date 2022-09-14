@@ -32,7 +32,10 @@ function toRIM($number){
                 if($num < I){
                     return '';
                 }
-                else $rim_num = $rim_num.'I';
+                else {
+                    $rim_num = $rim_num.'I';
+                    $num = $num - 1;
+                };
             }
             else {
                 $rim_num = $rim_num.'V';
@@ -49,10 +52,10 @@ function toRIM($number){
         $num = $num - 50;
     };
 
-    return $rim_num.toRIM($num-1);
+    return $rim_num.toRIM($num);
 }
 
 
-for($i = 1; $i<=25; $i++){
+for($i = 1; $i<=55; $i++){
     print_r($i." in RIM: ".toRIM($i)."\r\n<br>");
 }
